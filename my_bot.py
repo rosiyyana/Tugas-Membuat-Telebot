@@ -21,7 +21,7 @@ class Mybot:
 
     @myBot.message_handler(commands=['start', 'help'])
     def start(message):
-        photo = open('img/bot.jpg', 'rb')
+        photo = open('img/bot2.jpg', 'rb')
         myBot.send_photo(message.from_user.id, photo)
         text = myToken.deskripsi + "\nCreate by @Rosiyana" + "\n" \
                                                              "Waktu 🗓 : " + str(time)
