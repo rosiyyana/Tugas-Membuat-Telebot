@@ -18,14 +18,20 @@ time = datetime.now()
 class Mybot:
     def __init__(self):
         self.message
-
-    @myBot.message_handler(commands=['start', 'help'])
+ 
+    @myBot.message_handler(commands=['start'])
     def start(message):
         photo = open('img/bot2.jpg', 'rb')
         myBot.send_photo(message.from_user.id, photo)
         text = myToken.deskripsi + "\nCreate by @Rosiyana" + "\n" \
                                                              "Waktu 🗓 : " + str(time)
         myBot.reply_to(message, text)
+
+    @myBot.message_handler(commands=['help'])
+    def bantu(message):
+        bantu = myToken.bantuan + "\nCreate by @Rosiyana" + "\n" \
+                                                             "Waktu 🗓 : " + str(time)
+        myBot.reply_to(message, bantu)
 
     @myBot.message_handler(commands=['datasiswa'])
     def menu_data_siswa(message):
